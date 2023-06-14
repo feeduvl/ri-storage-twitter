@@ -1,17 +1,16 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
-	"gopkg.in/mgo.v2"
-	"gopkg.in/mgo.v2/bson"
 	"log"
 	"net/http"
 	"os"
-	"strings"
 	"strconv"
 	"time"
-	"io/ioutil"
+
+	"gopkg.in/mgo.v2"
+
+	"encoding/json"
+	"fmt"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
