@@ -1,11 +1,15 @@
-FROM golang:1.15
+FROM golang:1.20
 
 WORKDIR /go/src/app
+
 COPY . .
-RUN go get -v github.com/gorilla/mux@v1.8.0
-RUN go get -t -d -v ./...
+
+RUN go mod init ri-storage-twitter
+
+RUN go mod tidy
+
 RUN go install -v ./...
 
-EXPOSE 9684
+EXPOSE 9682
 
 CMD ["app"]
