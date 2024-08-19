@@ -1,11 +1,10 @@
+FROM golang:1.15
 
-FROM golang:1.18
 WORKDIR /go/src/app
 COPY . .
-RUN go mod init ri-storage-twitter
-RUN go mod tidy
-
+RUN go get -t -d -v ./...
 RUN go install -v ./...
 
-EXPOSE 9682
+EXPOSE 9684
+
 CMD ["app"]
