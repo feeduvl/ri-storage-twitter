@@ -9,7 +9,7 @@ RUN go mod init ri-storage-twitter && \
     go get github.com/gorilla/mux@v1.8.0 && \
     go mod tidy
 
-RUN go install -v ./...
+RUN go build -o app .
 
 EXPOSE 9682
 
