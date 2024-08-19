@@ -14,7 +14,7 @@ import (
 	"io/ioutil"
 
 	"github.com/gorilla/handlers"
-	"github.com/gorilla/mux"
+	"github.com/gorilla/mux@v1.5.0"
 )
 
 const (
