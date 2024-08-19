@@ -1,12 +1,13 @@
-FROM golang:1.20
+FROM golang:1.15
 
 WORKDIR /go/src/app
 
 COPY . .
 
-RUN go mod init ri-storage-twitter
-
-RUN go mod tidy
+# Initialize the module and add specific version of gorilla/mux
+RUN go mod init ri-storage-twitter && \
+    go get github.com/gorilla/mux@v1.8.0 && \
+    go mod tidy
 
 RUN go install -v ./...
 
