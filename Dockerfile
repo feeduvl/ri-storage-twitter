@@ -11,6 +11,8 @@ RUN go mod init ri-storage-twitter && \
 
 RUN go build -o app .
 
+RUN ls -la /go/src/app
+
 EXPOSE 9682
 
-CMD ["app"]
+CMD ["./app"]
